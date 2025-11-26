@@ -4,28 +4,27 @@
 @theme {
   /* Colors */
 
-  --color-brand-50: rgb(230, 240, 255);
-  --color-brand-50: rgb(239, 246, 255);
-  --color-brand-100: rgb(219, 234, 254);
-  --color-brand-200: rgb(191, 219, 254);
-  --color-brand-300: rgb(147, 197, 253);
-  --color-brand-400: rgb(96, 165, 250);
-  --color-brand-500: rgb(59, 130, 246);
-  --color-brand-600: rgb(37, 99, 235);
-  --color-brand-700: rgb(29, 78, 216);
-  --color-brand-800: rgb(30, 64, 175);
-  --color-brand-900: rgb(30, 58, 138);
+  --color-brand-50: rgb(254, 252, 232);
+  --color-brand-100: rgb(254, 249, 195);
+  --color-brand-200: rgb(254, 240, 138);
+  --color-brand-300: rgb(253, 224, 71);
+  --color-brand-400: rgb(250, 204, 21);
+  --color-brand-500: rgb(234, 179, 8);
+  --color-brand-600: rgb(202, 138, 4);
+  --color-brand-700: rgb(161, 98, 7);
+  --color-brand-800: rgb(133, 77, 14);
+  --color-brand-900: rgb(113, 63, 18);
 
-  --color-sub-50: rgb(240, 253, 244);
-  --color-sub-100: rgb(220, 252, 231);
-  --color-sub-200: rgb(187, 247, 208);
-  --color-sub-300: rgb(134, 239, 172);
-  --color-sub-400: rgb(74, 222, 128);
-  --color-sub-500: rgb(34, 197, 94);
-  --color-sub-600: rgb(22, 163, 74);
-  --color-sub-700: rgb(21, 128, 61);
-  --color-sub-800: rgb(22, 101, 52);
-  --color-sub-900: rgb(20, 83, 45);
+  --color-sub-50: rgb(250, 245, 255);
+  --color-sub-100: rgb(243, 232, 255);
+  --color-sub-200: rgb(233, 213, 255);
+  --color-sub-300: rgb(216, 180, 254);
+  --color-sub-400: rgb(192, 132, 252);
+  --color-sub-500: rgb(168, 85, 247);
+  --color-sub-600: rgb(147, 51, 234);
+  --color-sub-700: rgb(126, 34, 206);
+  --color-sub-800: rgb(107, 33, 168);
+  --color-sub-900: rgb(88, 28, 135);
 
   --color-neutral-0: rgb(255, 255, 255);
   --color-neutral-50: rgb(250, 250, 250);
@@ -69,8 +68,8 @@
   --color-success-700: rgb(21, 128, 61);
   --color-success-800: rgb(22, 101, 52);
   --color-success-900: rgb(20, 83, 45);
-  --color-brand-primary: rgb(30, 58, 138);
-  --color-sub-primary: rgb(22, 163, 74);
+  --color-brand-primary: rgb(234, 179, 8);
+  --color-sub-primary: rgb(147, 51, 234);
   --color-default-font: rgb(23, 23, 23);
   --color-subtext-color: rgb(115, 115, 115);
   --color-neutral-border: rgb(229, 229, 229);

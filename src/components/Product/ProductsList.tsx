@@ -1,7 +1,8 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-type Product = {
+export type Product = {
   no: string;
   merk: string;
   zat_aktif: string;
@@ -12,9 +13,12 @@ type Product = {
   gambar: string;
 };
 
-export default function BestDealsSection() {
+export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://sheetdb.io/api/v1/anp464vgibayl")
@@ -26,47 +30,53 @@ export default function BestDealsSection() {
       .catch(() => setLoading(false));
   }, []);
 
-  const showProduct = products.slice(-5).reverse();
+  const filtered = [...products].reverse().filter((p) => {
+    const s = search.toLowerCase();
+    return (
+      p.merk.toLowerCase().includes(s) ||
+      p.zat_aktif.toLowerCase().includes(s) ||
+      p.golongan.toLowerCase().includes(s) ||
+      p.indikasi.toLowerCase().includes(s)
+    );
+  });
 
   if (loading) return <p className="text-center mt-10">Loading products...</p>;
+
   return (
-    <section className="bg-white  lg:px-24 gap-12 py-24 px-6 md:px-12">
+    <section className="bg-white lg:px-24 gap-12 py-24 px-6 md:px-12">
       {/* Header */}
-      <div className="flex justify-between items-center mb-8">
-        <div className="space-y-2">
-          <p className="text-sm uppercase text-sub-primary border-sub-primary font-semibold border-l-6 pl-2">
-            PRODUK KAMI
-          </p>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-16 gap-6">
+        <div>
           <h2 className="text-3xl md:text-5xl text-brand-primary font-medium font-heading">
-            Produk Keluaran{" "}
+            Daftar{" "}
             <span className="bg-sub-200 text-sub-primary px-2 rounded-md">
-              Terbaru
+              Produk
             </span>{" "}
-            Kami!
+            Amanova!
           </h2>
-          <p className="mt-2">Pilihan terbaik untuk kesehatan Anda</p>
         </div>
-        <a
-          href="#"
-          className="text-brand-primary font-medium hover:underline flex items-center gap-1"
-        >
-          LIHAT PRODUK LENGKAP →
-        </a>
+
+        {/* Search Bar */}
+        <div className="w-full md:w-80 relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-5" />
+          <input
+            type="text"
+            placeholder="Cari produk..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full bg-white border border-gray-300 rounded-xl py-2.5 pl-11 pr-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-sub-primary/40 transition"
+          />
+        </div>
       </div>
 
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {showProduct.map((product) => (
+        {filtered.map((product) => (
           <div
+            onClick={() => navigate(`/products/${product.no}`)}
             key={product.no}
             className="bg-brand-primary/90 cursor-pointer rounded-2xl p-4 relative group hover:shadow-md transition"
           >
-            {/* {product.discount && (
-              <span className="absolute top-6 right-6 bg-sub-primary text-white text-xs font-medium px-2 py-1 rounded-md">
-                {product.discount}
-              </span>
-            )} */}
-
             {/* Product Image */}
             <img
               src={product.gambar}
@@ -74,12 +84,10 @@ export default function BestDealsSection() {
               className="w-full h-60 object-contain mb-4 bg-white rounded-md"
             />
 
-            {/* Category */}
             <p className="text-xs font-medium border-b max-w-fit leading-4 mb-1 text-white">
               {product.golongan}
             </p>
 
-            {/* Product Name + Cart Icon */}
             <div className="flex justify-between items-start gap-2">
               <h3 className="text-[17px] font-medium text-white leading-snug flex-1">
                 {product.merk}
@@ -91,6 +99,12 @@ export default function BestDealsSection() {
           </div>
         ))}
       </div>
+
+      {filtered.length === 0 && (
+        <p className="text-center mt-10 text-gray-500">
+          Produk tidak ditemukan.
+        </p>
+      )}
     </section>
   );
 }

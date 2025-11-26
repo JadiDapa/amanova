@@ -53,7 +53,7 @@ export default function Footer() {
               placeholder="Enter your email"
               className="px-4 py-2 rounded-l-lg text-white placeholder:text-slate-300 w-72 focus:outline-none border border-white"
             />
-            <button className="bg-white text-teal-700 font-semibold px-4 rounded-r-lg hover:bg-teal-50 transition">
+            <button className="bg-white text-brand-700 font-semibold px-4 rounded-r-lg hover:bg-brand-50 transition">
               Subscribe
             </button>
           </div>

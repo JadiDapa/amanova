@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -15,19 +15,18 @@ export default function Navbar() {
   const pathname = location.pathname;
 
   return (
-    <nav className="flex justify-between items-center w-full px-24 py-3">
+    <nav className="flex absolute top-0 left-0  justify-between items-center w-full p-6 lg:px-24 py-3">
       <div className="flex gap-3 items-center">
         <img
-          src="https://www.freeiconspng.com/thumbs/doctor-logo/doctors-medicine-doctor-logo-png-clipart-6.png"
-          alt="Logo Rafselfmedika"
-          className="size-14"
+          src="/logo.png"
+          alt="Logo Amanova"
+          className="size-12 lg:size-14"
         />
-        <p className="text-2xl  font-heading font-semibold">
-          <span className="text-brand-primary">RAFSELF</span>
-          <span className="text-sub-primary">MEDIKA</span>
+        <p className="text-lg lg:text-2xl  font-heading font-semibold">
+          <span className="text-brand-primary">Amanova</span>
         </p>
       </div>
-      <div className="flex gap-3 ">
+      <div className="gap-3 hidden lg:flex">
         {menu.map((item) => (
           <Link
             key={item.name}
@@ -40,10 +39,11 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
-      <button className="rounded-full flex gap-4 h-9 px-7 items-center text-white bg-brand-primary">
+      <button className="rounded-full hidden lg:flex  gap-4 h-9 px-7 items-center text-white bg-brand-primary">
         <p>Kontak Kami</p>
-        <Phone fill="white" strokeWidth={0} className="size-4" />
+        {/* <Phone fill="white" strokeWidth={0} className="size-4" /> */}
       </button>
+      <Menu className="lg:hidden" />
     </nav>
   );
 }

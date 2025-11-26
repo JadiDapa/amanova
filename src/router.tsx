@@ -7,6 +7,7 @@ import Organization from "./pages/Organization";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Activities from "./pages/Activities";
+import ProductDetail from "./pages/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "organization", element: <Organization /> },
       { path: "products", element: <Products /> },
+      { path: "products/:id", element: <ProductDetail /> },
       { path: "services", element: <Services /> },
       { path: "activites", element: <Activities /> },
     ],

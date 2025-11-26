@@ -62,7 +62,7 @@ export default function Activities() {
           </p>
           <h2 className="text-3xl md:text-5xl text-brand-primary font-medium font-heading">
             Kami Mengayomi{" "}
-            <span className="bg-green-200 text-sub-primary px-2 rounded-md">
+            <span className="bg-brand-200 text-sub-primary px-2 rounded-md">
               Semua
             </span>{" "}
             Untuk Sehat

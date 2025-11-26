@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const stats = [
   { value: "100+", label: "Katalog Produk" },
@@ -7,8 +8,10 @@ const stats = [
 ];
 
 export default function About() {
+  const navigate = useNavigate();
+
   return (
-    <section className="px-8 lg:px-24 gap-12 py-24 bg-brand-900 text-white">
+    <section className="px-8 lg:px-24 gap-12 py-24 bg-brand-800 text-white">
       {/* Top Text Section */}
       <div className="flex gap-12">
         <div className="px-4 flex-1">
@@ -44,7 +47,7 @@ export default function About() {
           </p>
           <h2 className="text-3xl md:text-5xl font-medium font-heading">
             Sekilas Tentang{" "}
-            <span className="bg-green-200 text-sub-primary px-2 rounded-md">
+            <span className="bg-sub-200 text-sub-primary px-2 rounded-md">
               Rafselfmedika
             </span>
           </h2>
@@ -72,7 +75,13 @@ export default function About() {
 
           {/* Buttons */}
           <div className="flex gap-3 mt-12 ">
-            <button className="px-5 py-2 flex items-center gap-2 rounded-lg bg-sub-primary transition">
+            <button
+              onClick={() => {
+                window.scrollTo(0, 0);
+                navigate(`/about`);
+              }}
+              className="px-5 py-2 flex items-center gap-2 rounded-lg bg-sub-primary transition"
+            >
               <p>Selengkapnya</p>
               <ChevronRight className="size-5" />
             </button>

@@ -29,7 +29,7 @@ export default function CTA() {
           </p>
           <a
             href="#contact"
-            className=" flex items-center max-w-fit mx-auto gap-2    bg-white text-teal-700 font-semibold px-6 py-2.5 rounded-lg shadow-md hover:bg-teal-50 transition"
+            className=" flex items-center max-w-fit mx-auto gap-2    bg-white text-brand-700 font-semibold px-6 py-2.5 rounded-lg shadow-md hover:bg-brand-50 transition"
           >
             <Phone className="size-5" />
             <p>Hubungi Kami</p>

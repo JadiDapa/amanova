@@ -40,7 +40,7 @@ export default function HealthcareServicesSection() {
             <h2 className="text-3xl md:text-5xl text-brand-primary font-medium font-heading">
               Kami Melayani <br />
               dengan Sepenuh{" "}
-              <span className="bg-green-200 text-sub-primary px-2 rounded-md">
+              <span className="bg-sub-200 text-sub-primary px-2 rounded-md">
                 Hati
               </span>
             </h2>
@@ -57,7 +57,7 @@ export default function HealthcareServicesSection() {
                 key={service.id}
                 className={`flex items-start gap-4 p-4 border-2  rounded-xl hover:shadow-sm transition ${
                   service.active
-                    ? "border-sub-primary shadow-lg"
+                    ? "border-brand-primary shadow-lg"
                     : "border-gray-200"
                 }`}
               >
